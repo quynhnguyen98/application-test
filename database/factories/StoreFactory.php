@@ -2,9 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\UserTable;
+use App\Models\StoreTable;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +16,13 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(UserTable::class, function (Faker $faker) {
+$factory->define(StoreTable::class, function (Faker $faker) {
+    static $mainUser;
+    if (!$mainUser) {
+        $mainUser = \App\Models\UserTable::pluck('id')->toArray();
+    }
     return [
-        'full_name' => $faker->name,
-        'user_name' => $faker->unique()->safeEmail,
-        'password' => \Illuminate\Support\Facades\Hash::make('123456'),
+        'user_id' => $faker->randomElement($mainUser),
+        'store_name' => $faker->unique()->company
     ];
 });
