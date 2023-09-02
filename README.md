@@ -3,10 +3,10 @@ PHP 7.3
 Laravel 7.x
 
 Run migrate
-_php artisan migrate_
+_*php artisan migrate*_
 
 Run seeder
-_php artisan db:seed_
+_*php artisan db:seed*_
 
 config .env
 APP_NAME=Laravel
