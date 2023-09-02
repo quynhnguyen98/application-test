@@ -29,6 +29,12 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
             Route::post('update', 'StoreController@updateAction');
             Route::post('delete', 'StoreController@deleteAction');
         });
+        Route::group(['prefix' => 'product'], function () {
+            Route::post('detail', 'ProductController@detailAction');
+            Route::post('create', 'ProductController@createAction');
+            Route::post('update', 'ProductController@updateAction');
+            Route::post('delete', 'ProductController@deleteAction');
+        });
         
         Route::post('logout', 'AuthController@logout');
     });

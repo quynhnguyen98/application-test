@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\ProductInterface;
+use App\Repositories\ProductRepo;
 use App\Repositories\StoreInterface;
 use App\Repositories\StoreRepo;
 use Illuminate\Support\ServiceProvider;
@@ -18,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(StoreInterface::class, StoreRepo::class);
+        $this->app->singleton(ProductInterface::class, ProductRepo::class);
     }
 
     /**
