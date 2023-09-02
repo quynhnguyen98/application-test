@@ -1,13 +1,13 @@
 ## About Laravel
 PHP 7.3
 Laravel 7.x
-------------------------------------------
+
 Run migrate
 php artisan migrate
-------------------------------------------
+
 Run seeder
 php artisan db:seed
-------------------------------------------
+
 config .env
 APP_NAME=Laravel
 APP_ENV=local
